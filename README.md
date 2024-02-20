@@ -1,10 +1,10 @@
-<img width="1436" alt="Screenshot 2024-02-21 at 12 40 42 AM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/c1502288-7a59-462b-8d7e-641604474342"># mac_process_mon
-Monitor Mac Active Process and Display in a GUI using tkinter
+**mac_process_mon
+Monitor Mac Active Process and Display in a GUI using tkinter**
 
 
 You should be running 
 
-TopMonitorApp.py -- that's the main program which displays a window as below
+**TopMonitorApp.py **-- that's the main program which displays a window as below
 
 <img width="1436" alt="Screenshot 2024-02-21 at 12 40 42 AM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/9b6d4280-7130-4555-b9a1-6ad37cb8b2c1">
 
