@@ -1,0 +1,4 @@
+INFO,green
+OK,green
+ERROR,red
+ERR,red
