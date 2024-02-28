@@ -6,7 +6,7 @@ You should be running
 
 **TopMonitorApp.py **-- that's the main program which displays a window as below
 
-<img width="1436" alt="Screenshot 2024-02-21 at 12 40 42 AM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/9b6d4280-7130-4555-b9a1-6ad37cb8b2c1">
+<img width="500" alt="Screenshot 2024-02-21 at 12 40 42 AM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/9b6d4280-7130-4555-b9a1-6ad37cb8b2c1">
 
 Known Issues:
 
@@ -30,6 +30,9 @@ Want to provide a visual view of the logs - hope i'll add more to it.
 
 Run **LogMonitorApp.py**
 
-<img width="1406" alt="Screenshot 2024-02-28 at 7 55 49 PM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/f12d6f4a-c3ed-40f2-bd42-72955070487b">
+<img width="500" alt="Screenshot 2024-02-28 at 7 55 49 PM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/f12d6f4a-c3ed-40f2-bd42-72955070487b">
+
+
+<img width="500" alt="Screenshot 2024-02-28 at 8 35 43 PM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/6ad3c9c6-8e16-40e6-834d-b2428ed72161">
 
 
