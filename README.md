@@ -8,6 +8,12 @@ You should be running
 
 <img width="1436" alt="Screenshot 2024-02-21 at 12 40 42 AM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/9b6d4280-7130-4555-b9a1-6ad37cb8b2c1">
 
+
+Want to provide a visual view of the logs - hope i'll add more to it.
+
+
+<img width="1406" alt="Screenshot 2024-02-28 at 7 55 49 PM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/f12d6f4a-c3ed-40f2-bd42-72955070487b">
+
 Known Issues:
 
 1. as of now i am only listing 100 processes , but i wanted to display all
