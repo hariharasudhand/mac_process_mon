@@ -1,7 +1,5 @@
 import tkinter as tk
 from tkinter import filedialog
-import subprocess
-import threading
 import re
 import matplotlib.pyplot as plt
 
@@ -26,43 +24,38 @@ class LogMonitorApp:
         self.text_area = tk.Text(self.root, wrap='word')
         self.text_area.pack(fill='both', expand=True)
 
-        # Initialize a thread for tailing the log file
-        self.tail_thread = None
-
     def load_log_file(self):
         # Open file dialog to select log file
         log_file_path = filedialog.askopenfilename(filetypes=[("Log files", "*.*")])
         if log_file_path:
             # Clear existing text in text area
             self.text_area.delete(1.0, tk.END)
-            # Start tailing the log file in a separate thread
-            self.tail_thread = threading.Thread(target=self.tail_log_file, args=(log_file_path,))
-            self.tail_thread.start()
-
-    def tail_log_file(self, log_file_path):
-        # Start tailing the log file and display output in the text area
-        tail_process = subprocess.Popen(['tail', '-f', log_file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        for line in tail_process.stdout:
-            self.text_area.insert(tk.END, line)
-            self.text_area.see(tk.END)
+            # Read log data from file and insert into text area
+            with open(log_file_path, 'r') as file:
+                log_data = file.read()
+                self.text_area.insert(tk.END, log_data)
 
     def visualize_logs(self):
+        # Read keywords and their corresponding colors from the keywords.txt file
+        keywords_colors = {}
+        with open('keywords.txt', 'r') as f:
+            for line in f:
+                keyword, color = line.strip().split(',')
+                keywords_colors[keyword] = color
+
         # Get the text from the text area
         log_text = self.text_area.get(1.0, tk.END)
-        
-        # Define patterns for ERROR/ERR and INFO/OK
-        error_pattern = re.compile(r'\bERROR\b|\bERR\b', re.IGNORECASE)
-        info_pattern = re.compile(r'\bINFO\b|\bOK\b', re.IGNORECASE)
-        
-        # Count occurrences of each pattern
-        error_count = len(error_pattern.findall(log_text))
-        info_count = len(info_pattern.findall(log_text))
-        
+
+        # Count occurrences of each keyword
+        keyword_counts = {keyword: len(re.findall(r'\b{}\b'.format(keyword), log_text, flags=re.IGNORECASE)) for keyword in keywords_colors.keys()}
+
         # Plot the counts
-        plt.bar(['ERROR/ERR', 'INFO/OK'], [error_count, info_count], color=['red', 'green'])
-        plt.xlabel('Log Type')
+        plt.bar(keyword_counts.keys(), keyword_counts.values(), color=[keywords_colors.get(keyword, 'gray') for keyword in keyword_counts.keys()])
+        plt.xlabel('Keyword')
         plt.ylabel('Count')
         plt.title('Log Visualization')
+        plt.xticks(rotation=45, ha='right')
+        plt.tight_layout()
         plt.show()
 
 def main():
