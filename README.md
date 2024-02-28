@@ -12,6 +12,10 @@ You should be running
 Want to provide a visual view of the logs - hope i'll add more to it.
 
 
+**Log Monitoring**
+
+Run **LogMonitorApp.py**
+
 <img width="1406" alt="Screenshot 2024-02-28 at 7 55 49 PM" src="https://github.com/hariharasudhand/mac_process_mon/assets/4798405/f12d6f4a-c3ed-40f2-bd42-72955070487b">
 
 Known Issues:
